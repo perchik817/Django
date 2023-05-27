@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+  <h1>Вы уверены что хотите удалить фильм?</h1>
+  {% csrf_token %}
+  <input type="submit" value="delete">
+
+</form>
+
+</body>
+</html>

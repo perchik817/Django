@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Films Detail</title>
+</head>
+<body>
+<center>
+  <h1><b>Название</b> - {{object.title}}</h1>
+  <p><b>Описание</b> - {{show.description}}</p>
+  <img src="{{object.image.url}}" alt="" width="200" height="200">
+  <p><b>Колличество серий</b> -{{object.quantity}}</p>
+  <iframe src="{{object.trailer}}" frameborder="0" width="640" height="420"></iframe>
+  <p><b>Жанр</b> - <i>{{object.genre}}</i></p>
+<button><a href="/tvshow/{{object.id}}/update">Обновить фильм</a></button>
+    <button><a href="/tvshow/{{object.id}}/delete">Удалить фильм</a></button>
+</center>
+    <hr>
+    <p>
+        <b>Комментарий к фильму:</b>
+<ol>
+    {%for i in object.comment_object.all %}
+    <li>
+            <p>{{i.text}}</p>
+        </li>
+    <p>{{t.created_date}}</p>
+    {%endfor%}
+
+</ol>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>TV Show</title>
+</head>
+<body>
+<center>
+	<h1 class = "h1">Наши фильмы</h1>
+	{% for i in object_list %}
+	
+	<h2>{{i.title}}</h2>
+	<p>{{i.genre}}</p>
+	<a href = "/tvshow_detail/{{i.id}}">Подробнее</a>
+	{% endfor %}
+</center>
+
+</body>
+</html>
